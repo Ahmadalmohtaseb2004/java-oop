@@ -1,0 +1,60 @@
+Q1) Imagine a tollbooth at a bridge. Cars passing by the booth are expected to pay a 50 cent toll. Mostly they do, but sometimes a car goes by without paying. The tollbooth keeps track of the number of cars that have gone by, and of the total amount of money collected. Model this tollbooth with a class called tollBooth. The two data items are a type unsigned int to hold the total number of cars, and a type double to hold the total amount of money collected. A constructor initializes both of these to 0. A member function called payingCar() increments the car total and adds 0.50 to the cash total. Another function, called nopayCar(), increments the car total but adds nothing to the cash total. Finally, a member function called display() displays the two totals. Make appropriate member functions const.
+1.
+package tollbooth;
+2.
+public class TollBooth {
+3.
+4.
+private int carTotal;
+5.
+private double cashTotal;
+6.
+7.
+public TollBooth() {
+8.
+this.carTotal = 0;
+9.
+this.cashTotal = 0.0;
+10.
+}
+11.
+public void payingCar() {
+12.
+carTotal++;
+13.
+cashTotal += 0.5;
+14.
+}
+15.
+public void nopayCar() {
+16.
+carTotal++;
+17.
+}
+18.
+public void display() {
+19.
+System.out.println("Number of All cars: " + carTotal);
+20.
+System.out.println("All Cash: $" + cashTotal);
+21.
+}
+22.
+public static void main(String[] args) {
+23.
+TollBooth mainBridge = new TollBooth();
+24.
+25.
+mainBridge.payingCar();
+26.
+mainBridge.payingCar();
+27.
+mainBridge.payingCar();
+28.
+mainBridge.nopayCar();
+29.
+mainBridge.nopayCar();
+30.
+mainBridge.display(); } }
+Number of All cars: 5
+All Cash: $1.5
